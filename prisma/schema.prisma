@@ -14,13 +14,17 @@ datasource db {
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model seller {
+model Seller {
   id  Int @default(autoincrement()) @id
-  name String @unique  
+  name String @unique
+  users User[]
 }
 
-model user {
+model User {
   id Int @default(autoincrement()) @id
   username String @unique
   password String
+  sellerId Int 
+
+  seller Seller @relation(fields: [sellerId], references: [id])
 }

@@ -1,7 +1,7 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { IsNotEmpty, IsString, Length } from 'class-validator';
-import { CreateSellerDto } from './create-seller.dto';
 import { IsUniqueSellerName } from '../validators/seller.is-unique.decorator';
+import { CreateSellerDto } from './create-seller.dto';
 
 export class UpdateSellerDto extends PartialType(CreateSellerDto) {
   @IsString()

@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/jwt.guard';
 import { PrismaModule } from './prisma/prisma.module';
 import { SellerModule } from './seller/seller.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { SellerModule } from './seller/seller.module';
       isGlobal: true,
     }),
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [
